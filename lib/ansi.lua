@@ -1,4 +1,7 @@
-function EnterBuffer() print("\x1b[?1049h") end
+function EnterBuffer()
+	print("\x1b[?1049h")
+	print("\x1b[0;0H")
+end
 
 function ExitBuffer() print("\x1b[?1049l") end
 
@@ -15,8 +18,3 @@ function Cprint(fg, bg, text)
 
 	print(fg_c .. bg_c .. text_c)
 end
-
-EnterBuffer()
-Cprint("46", "94", "Fuck")
-Sleep(6)
-ExitBuffer()
